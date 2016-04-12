@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eaten_at: 2016-03-26 15:13:49
+  count: 1
+  food_id: 
+
+two:
+  eaten_at: 2016-03-26 15:13:49
+  count: 1
+  food_id: 

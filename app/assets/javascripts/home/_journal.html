@@ -1,0 +1,18 @@
+  <div class="page-header">
+    <h3>What I've Eaten</h3>
+  </div>
+
+  <div>
+    <div ng-repeat="entry in entries | orderBy:'-eaten_at' " class="entry">
+      <button class="glyphicon glyphicon-remove-sign"
+        ng-click="deleteEntry(entry)"></button>
+      <span>
+        <img ng-src="/assets/{{entry.food_name|lowercase}}.png" alt="{{entry.food_name}}" onerror="this.src='/assets/food.png'"/> </span>
+      <span style="font-size:20px; margin-left:10px;">
+        <b>{{entry.food_name}}</b> on: {{entry.eaten_at | date:'MM/dd @ h:mma'}}
+      </span>
+      <span>
+         <a href="#/entries/{{entry.id}}">Details</a>
+      </span>
+    </div>
+  </div>

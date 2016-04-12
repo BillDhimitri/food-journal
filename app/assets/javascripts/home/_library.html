@@ -1,0 +1,57 @@
+  <div class="page-header">
+    <h3>Food Items</h3>
+  </div>
+
+  <div>
+    <div ng-repeat="food in foods | orderBy:'name'" class="food rating{{food.rating}}">
+      <button class="glyphicon glyphicon-plus-sign"
+        ng-click="addEntry(food)"></button>
+      <span>
+        <img ng-src="/assets/{{food.name|lowercase}}.png" alt="{{food.name}}" onerror="this.src='/assets/food.png'"/> </span>
+      <span style="font-size:20px; margin-left:10px;">
+      <span style=" width:16em; overflow:auto; font-size:20px; margin-left:10px; display: inline-block;">
+        <b>{{food.name}}</b> {{food.description}} </span>
+    
+      <span >
+        <a href="#/foods/{{food.id}}">Edit</a> </span>
+      <span >
+      <button class="glyphicon glyphicon-remove-sign"
+        ng-click="deleteFood(food)"></button>
+      </span >
+    </div>
+
+    <form ng-submit="addFood()"
+      style="margin-top:30px;">
+      <h3>Create a new food item</h3>
+
+      <div class="form-group">
+        <input type="text"
+        class="form-control"
+        placeholder="Food"
+        ng-model="name"></input>
+      </div>
+
+      <div class="form-group">
+        <input type="text"
+        class="form-control"
+        placeholder="Description"
+        ng-model="description"></input>
+      </div>
+
+      <label>
+        <input type="radio" ng-model="rating" ng-value=1> Preferred
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="rating" ng-value=2> Limit
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="rating" ng-value=3> Avoid
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="rating" ng-value=0> Unrated
+      </label><br/>
+
+      <button type="submit" class="btn btn-primary">Create Food Item</button>
+    </form>
+
+  </div>

@@ -1,0 +1,31 @@
+    <div class="page-header">
+      <h3>
+          Food: {{food.name}}
+      </h3>
+    </div>
+
+    <span>
+       Description: {{food.description}}
+    </span>
+
+    <form ng-submit="editFood()"
+      style="margin-top:30px;">
+      <h3>Edit food</h3>
+
+      <div class="form-group">
+        <input type="text"
+        class="form-control"
+        placeholder="Food"
+        ng-model="name"></input>
+      </div>
+
+      <div class="form-group">
+        <input type="text"
+        class="form-control"
+        placeholder="Description"
+        ng-model="description"></input>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Edit Food Item</button>
+    </form>
+

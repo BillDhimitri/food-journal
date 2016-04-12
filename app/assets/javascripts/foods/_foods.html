@@ -1,0 +1,38 @@
+    <div class="page-header">
+      <h3>
+          Edit Food Item
+      </h3>
+    </div>
+
+    <form ng-submit="editFood()"
+      style="margin-top:30px;">
+      <div class="form-group">
+        <input type="text"
+        class="form-control"
+        placeholder="Food"
+        ng-model="name"></input>
+      </div>
+
+      <div class="form-group">
+        <input type="text"
+        class="form-control"
+        placeholder="Description"
+        ng-model="description"></input>
+      </div>
+
+      <label>
+        <input type="radio" ng-model="rating" ng-value=1> Preferred
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="rating" ng-value=2> Limit
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="rating" ng-value=3> Avoid
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="rating" ng-value=0> Unrated
+      </label><br/>
+
+      <button type="submit" class="btn btn-primary">Update Food Item</button>
+    </form>
+

@@ -1,0 +1,56 @@
+//@import "assets/stylesheets/_bootstrap.scss";
+
+$primaryColor: #ffcc99;
+$foodColor: #ffccee;
+$rating1Color: #aaffaa;
+$rating2Color: #ffffaa;
+$rating3Color: #ffaaaa;
+$foodColor: #ffccee;
+$entryColor: #cceeff;
+$itemSpacing: 10px;
+$imageHeight: 48px;
+$borderSize: 3px;
+
+body {
+    background: $primaryColor;
+}
+
+.food {
+    margin: $itemSpacing;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.entry {
+    margin: $itemSpacing;
+    white-space: nowrap;
+    overflow: hidden;
+    background: $entryColor;
+}
+
+.glyphicon {
+    font-size: $imageHeight;
+    vertical-align: middle;
+    padding-top: $borderSize;
+    padding-bottom: $borderSize;
+}
+
+.glyphicon-remove-sign {
+    float: right;
+}
+
+img {
+    border: $borderSize solid black;
+}
+
+.rating1 {
+    background: $rating1Color;
+}
+
+.rating2 {
+    background: $rating2Color;
+}
+
+.rating3 {
+    background: $rating3Color;
+}

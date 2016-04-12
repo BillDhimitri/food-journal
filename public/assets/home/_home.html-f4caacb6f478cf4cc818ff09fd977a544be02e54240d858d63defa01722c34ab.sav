@@ -1,0 +1,58 @@
+  <div class="page-header">
+    <h1>Food Journal</h1>
+  </div>
+
+
+  <div ng-show=showJournal>
+    <h3>What I've Eaten</h3>
+
+    <div ng-repeat="entry in entries | orderBy:'-eaten_at'" class="entry">
+      <span class="glyphicon glyphicon-remove-sign"
+        ng-click="deleteEntry(entry)"></span>
+      <span style="font-size:20px; margin-left:10px;">
+        {{entry.food_name}} eaten at: {{entry.eaten_at | date:'MM/dd @ h:mma'}}
+      </span>
+      <span>
+         <a href="#/entries/{{entry.id}}">Details</a>
+      </span>
+    </div>
+  </div>
+
+  <div ng-show=showLibrary>
+    <h3>All Foods</h3>
+
+    <div ng-repeat="food in foods | orderBy:'name'" class="food">
+      <span class="glyphicon glyphicon-remove-sign"
+        ng-click="deleteFood(food)"></span>
+      <span class="glyphicon glyphicon-plus-sign"
+        ng-click="addEntry(food)"></span>
+      <span style="font-size:20px; margin-left:10px;">
+        {{food.name}} ({{food.description}})
+      </span>
+      <span>
+        <a href="#/foods/{{food.id}}">Details</a>
+      </span>
+    </div>
+
+    <form ng-submit="addFood()"
+      style="margin-top:30px;">
+      <h3>Add a new food</h3>
+
+      <div class="form-group">
+        <input type="text"
+        class="form-control"
+        placeholder="Food"
+        ng-model="name"></input>
+      </div>
+
+      <div class="form-group">
+        <input type="text"
+        class="form-control"
+        placeholder="Description"
+        ng-model="description"></input>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create Food Item</button>
+    </form>
+
+  </div>
